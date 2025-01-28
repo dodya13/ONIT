@@ -23,7 +23,8 @@ jobs:
       run: docker build -t my_docker_image_name:latest .
 
     - name: Push Docker image to Docker Hub
-      run: docker push my_docker_image_name:latest
+      run: docker push ${{ secrets.DOCKER_USERNAME }}/my_docker_image_name:latest
+
 
   deploy:
     runs-on: ubuntu-latest
